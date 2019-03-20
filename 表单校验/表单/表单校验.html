@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!--  引入js文件 -->
+		<script type="text/javascript" src="regutils.js"></script>
+		<script>
+			//onkeyup事件 按键抬起事件
+			//onblur 失去焦点
+			// 1.确定事件:onfocus 获得焦点
+			// 2.事件要驱动函数
+			// 3.函数做一些事情,修改span内容
+			function showTips(spanId,msg){
+				var span = document.getElementById(spanId);
+				span.innerHTML = msg;
+			}
+			
+			// 校验用户名
+			// 事件onblur
+			// 函数checkUserName
+			// 函数显示校验结果
+			
+			function checkUserName(){
+				//获取用户输入的内容
+				var uValue = document.getElementById("username").value
+				//获得要显示的结果的span 
+				var span = document.getElementById("span_username")
+				debugger
+				//对输入的内容进行校验
+				if(uValue.length < 6){
+					//显示校验结果
+					span.innerHTML = "<font color='red' size='2'>用户名太短</font>";
+					return false;
+				}else{
+					span.innerHTML = "<font color='green' size='2'>用户名可用</font>"
+					return true;
+				}
+				
+				
+			}
+			//密码校验
+			function checkpassword(){
+				var pValue = document.getElementById("password").value;
+				var span = document.getElementById("span_password");
+				if(pValue.length < 6){
+					span.innerHTML = "<font color='red' size='2'>密码太短</font>"
+					return false;
+				}else{
+					span.innerHTML = "<font color='green' size='2'>密码可用</font>"
+					return true;
+				}
+			}
+			//确认密码
+			function esurepassword(){
+				debugger;
+				var pValue = document.getElementById("password").value;
+				var cValue = document.getElementById("checkPassword").value;
+				var span1 = document.getElementById("span_checkPassword");
+				if( pValue != cValue){
+					span1.innerHTML = "<font color='red' size='2'>密码不一致</font>"
+					return false;
+				}else{
+					span1.innerHTML = "<font color='green' size='2'>密码一致</font>"
+					return true;
+				}
+			}
+			
+			function checktel(){
+				var vTel = document.getElementById("phone").value;
+				var span = document.getElementById("span_tel");
+				if(vTel.length == 4){
+					span.innerHTML = "<font color='green' size='2'>手机号可用</font>"
+					return true;
+				}else{
+					
+					span.innerHTML = "<font color='red' size='2'>手机号长度不对</font>"
+					return false;
+				}
+			}
+			function checkemail(){
+				var umail = document.getElementById("email").value;
+				var flag = checkEmail(umail);
+				var span = document.getElementById("span_email");
+				
+				if(flag){
+					span.innerHTML = "<font color='red' size='2'>恭喜您,可用</font>";
+					return true;
+				}else{
+					span.innerHTML = "<font color='red' size='2'>对不起,邮箱格式貌似有问题</font>";
+					return false;
+				}
+			}
+			function checkForm(){
+				var flag = checkUsername() && checkPassword() && checkRePassword() && checkMail();
+				return flag;
+			}
+		</script>
+	</head>
+	<body>
+		<form action="../img/1.jpg" onsubmit="return checkForm()" ><br />
+					用户名：<input type="text" id="username" onfocus="showTips('span_username','用户名长度不能小于6')"  onblur="checkUserName()" onkeyup="checkUserName()"/><span id="span_username" style="color: blue;font-size: 2px;"></span><br />
+					密码：<input type="password" id="password" onfocus="showTips('span_password','密码长度不能小于6')"  onblur="checkpassword()" onkeyup="checkpassword()"/><span id="span_password" style="color: blue;font-size: 2px;"></span><br />
+					确认密码：<input type="password" id= "checkPassword" onfocus="showTips('span_checkPassword','密码长度不能小于6')" onblur="esurepassword()" onkeyup="esurepassword()"/><span id="span_checkPassword" style="color: blue;font-size: 2px;"></span><br />
+					手机号：<input type="text" id="phone" onfocus="showTips('span_tel','手机号为11位')" onblur="checktel()" onkeyup="checktel()" /><span id="span_tel" style="color: blue;font-size: 2px;"></span><br />
+					邮箱：<input type="email" id="email" onfocus="showTips('span_email','邮箱格式为:---')" onblur="checkemail()" onkeyup="checkemail()" /><span id="span_email" style="color: blue;font-size: 2px;"></span><br />
+		
+					
+					<input type="submit" value="提交" />
+				</form>
+				<br />
+	</body>
+</html>

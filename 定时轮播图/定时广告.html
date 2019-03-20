@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			
+			function init(){
+				setInterval("showImg()",2000);
+				setInterval("hideImg()",4000);
+			}
+			function showImg(){
+				var img = document.getElementById("pic")
+				img.style.display = "block";
+			}
+			function hideImg(){
+				var img = document.getElementById("pic");
+				img.style.display = "none";
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<img src="img/1.jpg" id="pic" style="display: none;">
+	</body>
+</html>

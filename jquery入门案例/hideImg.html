@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script>
+			//文档加载完成事件
+			$(function(){
+				setTimeout("showAd()",3000);
+				
+			})
+			function showAd(){
+				$("#img1").fadeIn();
+				setTimeout("hideAd()",1000);
+			}
+			function hideAd(){
+				$("#img1").fadeOut();
+			}
+		</script>
+	</head>
+	<body>
+		<img src="img/c_0001.jpg" id="img1" style="display: none;"/>
+	</body>
+</html>

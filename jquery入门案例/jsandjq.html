@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script>
+			function changejs(){
+				var div = document.getElementById("div1");
+				div.innerHTML = "js修改内容";
+				$(div).html("js转化为jq修改内容")
+			}
+			$(function(){
+				//按钮绑定事件
+				$("#btn2").click(function(){
+					$("#div2").html("jq修改内容")
+					var $div = $("#div2");
+					var jsdiv = $div.get(0);
+					var jsdiv = ¥div[0];
+					jsdiv.innerHTML = "jq转化为js对象修改内容";
+					
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input type="button" value="js修改div内容" onclick="changejs()" id="btn1"/>
+		<div id="div1">
+			内容被js修改
+		</div>
+		<input type="button" value="jq修改div内容"  id="btn2"/>
+		<div id="div2">
+			内容被jq修改
+		</div>
+	</body>
+</html>

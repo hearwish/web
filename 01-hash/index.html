@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="#zhutou">123</a>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<pre id="zhutou">哦o sdfasdf asdf</pre>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		<p>哈哈哈哈哈</p>
+		
+	</body>
+	<script>
+		(function(window){
+			window.addEventListener('hashchange',function(e){
+				var hash = window.location.hash;
+				switch(hash){
+					case '#/index/':
+						console.log('请求index');
+						break;
+					case '#/demo/':
+						console.log('请求demo');
+						break;
+				}
+// 				console.log("121")
+// 				console.log(e);
+				//hash 属于路径（url)的组成部分
+				 //console.log(window.location.href);
+				//可通过window.location拿到所有下列信息
+				//https://www.baidu.com:8080/aaa/1.html?id=10#name
+				//hostname : www.baidu.com
+				//host:www.baidu.com:8080
+				//port:8080
+				//pathname:/aaa/1.html
+				//search:?id=10
+				//hash:#name
+				
+			});
+			var url = 'https://www.baidu.com:8080/aaa/1.html?id=10#name;'
+			var alink = window.document.createElement('a');
+			alink.href = url;
+			console.log(alink);
+			console.log(alink.search);
+			console.log(alink.hash);
+		})(window)
+		
+	</script>
+</html>

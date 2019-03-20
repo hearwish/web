@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			var provinces = [["承德市","平泉"],["南京","苏州"]];
+			
+			function selectProvince(){
+				var province = document.getElementById("s1");
+				var city = document.getElementById("s2");
+				city.options.length = 0;
+				var value = province.value;
+				var cities = provinces[value];
+				
+				
+				for( var i= 0;i<cities.length;i++){
+					var cityText = cities[i];
+					var option1 = document.createElement("option");
+					var textnode = document.createTextNode(cityText);
+					option1.appendChild(textnode);
+					
+					city.appendChild(option1);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<!-- 省份 -->
+		<select onchange="selectProvince()" id="s1">
+			<option value="-1">请选择</option>
+			<option value="0">河北</option>
+			<option value="1">江苏</option>
+		</select>
+		<!-- 城市 -->
+		<select id="s2"></select>
+	</body>
+</html>

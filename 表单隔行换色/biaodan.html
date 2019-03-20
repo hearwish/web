@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			function init(){
+				var tab = document.getElementById("tab");
+				var rows = tab.rows;
+				//遍历所有行,根据奇数偶数修改颜色
+				for(var i=1;i<rows.length;i++){
+					var row = rows[i];//得到其中一行
+					
+					if(i%2==0){
+						row.bgColor = "yellow";
+					}else{
+						row.bgColor = "blue";
+					}
+				}
+			}
+			// 全选全不选
+			// 确定事件 onclick
+			// 触发函数 checkAll()
+			function checkAll(){
+				//获取当前第一个checkbox的状态
+				var checkbox1 = document.getElementById("check1");
+				//得到当前checkbox1的状态
+				var checked = checkbox1.checked;
+				//获取所有分类项的checkbox
+				var checks = document.getElementsByTagName("input")
+				//alert(checks.length);
+				//var checks = document.getElementsByName("checkone");
+				for( var i = 1;i<checks.length;i++){
+					var checkone = checks[i];
+					 checkone.checked = checked;
+				}
+				//修改每一个checkbox的状态
+				
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<!-- 1确定事件
+			 2事件触发函数init()
+			 函数:才做页面的元素
+			 操作表格中的每一行
+			 动态修改行的背景颜色
+			 
+		 -->
+		 
+		<table border="1px" width="600px" id="tab">
+			<tr>
+				<td> <input type="checkbox" checked="checked" onclick="checkAll()" id="check1"/></td>
+				<td>1</td>
+				<td>手机数码</td>
+				<td>苹果</td>
+				<td>first</td>
+				<td>
+					<a href="#">修改</a>|
+					<a href="#">删除</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td> <input type="checkbox"/></td>
+				<td>成人用品</td>
+				<td>杜蕾斯</td>
+				<td>超薄</td>
+				<td>超薄无感</td>
+				<td>
+				<a href="#">修改</a>|
+				<a href="#">删除</a>
+				
+				</td>
+			</tr>
+			
+		</table>
+	</body>
+</html>

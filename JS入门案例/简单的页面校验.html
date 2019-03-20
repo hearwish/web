@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			// 确定时间:提交时间onsubmit
+			// 事件出发函数checkform()
+			// 函数中做一些校验
+			function checkForm(){
+				//获取用户输入的内容
+				var inputUser = document.getElementById("username");
+				var uValue = inputUser.value;
+				var password1 = document.getElementById("password");
+				var checkPassword1 = document.getElementById("checkPassword")
+				var uEmail = document.getElementById("email")
+				
+				if(password.value.length < 8){
+					alert("密码太短");
+					return false
+				}
+				
+				if(password1.value != checkPassword1.value){
+					alert("两次密码输入不一致")
+					return false
+				}
+				
+				if(uValue.length < 6){
+					alert("输入大于6的用户名")
+					return false
+				}
+				if(/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(uEmail)){
+					
+				}else{
+					alert("输入正确的邮箱格式")
+					return false;
+				}
+				return true;
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		<form action="js入门.html" onsubmit="return checkForm()"><br />
+			用户名：<input type="text" id="username"/><br />
+			密码：<input type="password" id="password"/><br />
+			确认密码：<input type="password" id="checkPassword"/><br />
+			邮箱：<input type="text" id="email"/><br />
+
+			
+			<input type="submit" value="提交" />
+		</form>
+		<br />
+		
+		
+		
+	</body>
+</html>

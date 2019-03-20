@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body ng-app="myModule" ng-controller='helloController'>
+		<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		
+		
+		<script>
+			//创建控制器先创建模块
+			var module = angular.module('myModule',[]);
+			// angular在执行控制器函数时,会根据参数的名字（$scope）,自动的注入对象
+			//根据参数名称传递对象,所以必须要正确写参数名称
+			module.controller('helloController',function($scope,$http){
+			
+				
+			});
+		</script>
+	</body>
+</html>

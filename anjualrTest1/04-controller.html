@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="hello">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<table ng-controller="worldController" border="1px">
+			<tr>
+				<td>用户名：</td>
+				<td><input type="text" ng-model="user.username"  /></td>
+			</tr>
+			<tr>
+				<td>密码</td>
+				<td><input type="password" ng-model="user.password" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="button" ng-click="login()" value="登陆" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>{{message}}</td>
+			</tr>
+		</table>
+		
+		<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script>
+			var app = angular.module('hello',[]);
+			app.controller('worldController',['$scope',function($scope){
+				$scope.user = {
+					username:'',
+					password:'',
+					};
+					//请输入用户名 输入格式不合法 
+				$scope.message ='';
+				//行为
+				$scope.login = function(){
+					//数据的变化是双向的同步,所以界面上的值变化会同步到$scope.user上
+					alert($scope.user.username);
+					console.log($scope.user)
+				};
+				//官方的api提供的一个方法
+				$scope.$watch('user.username',function(no,old){
+					// 此处user.username发生变化时
+// 					console.log('now is:'+now);
+// 					console.log('now is:'+old);
+					if(no){
+						if(no.length<7){
+							$scope.message='输入格式不合法';
+						}else{
+							$scope.message='';
+						}
+					}else{
+						$scope.message='输入格式不合法';
+					}
+				});
+				
+			}]);
+		</script>
+		
+	</body>
+</html>

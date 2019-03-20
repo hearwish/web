@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script>
+			$(function(){
+				$("#show").click(function(){
+					// $("#img1").slideDown();
+					// $("#img1").fadeIn();
+					$("#img1").animate({width:"500px",opacity:"1"},5000);
+				});
+				$("#hide").click(function(){
+					// $("#img1").hide("slow");
+					// $("#img1").fadeOut("slow");
+					$("#img1").animate({width:"1000px",opacity:"0"},5000);
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<input type="button" value="显示" id="show"/>
+		<input type="button" value="隐藏" id="hide"/><br />
+		<img src="img/c_0001.jpg" id="img1" width="500px"/>
+	</body>
+</html>
