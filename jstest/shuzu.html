@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		//两种方法需放在调用之前
+		//首先可以给JS的数组对象定义一个函数，用于查找指定的元素在数组中的位置
+		Array.prototype.indexOf = function(val) { 
+		for (var i = 0; i < this.length; i++) { 
+		if (this[i] == val) return i; 
+		} 
+		return -1; 
+		};
+		//然后使用通过得到这个元素的索引，使用js数组自己固有的函数去删除这个元素：
+		Array.prototype.remove = function(val) { 
+		var index = this.indexOf(val); 
+		if (index > -1) { 
+		this.splice(index, 1); 
+		} 
+		};
+		var a =['a','b','c'];
+		console.log(a)
+		a.remove('b');
+		console.log(a)
+		</script>
+	</body>
+</html>
